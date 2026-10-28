@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job Estimate &amp; Bid Calculator | Jobsite Forms Company</title><link rel="icon" href="logo-96.png"><link rel="stylesheet" href="styles.css"></head><body>
+<header class="top no-print"><img src="logo-96.png" alt=""><div><h1>Job Estimate &amp; Bid Calculator</h1><p>Price the job, then print a clean estimate.</p></div></header>
+<main class="wrap no-print">
+<section class="card"><h2>Saved estimates</h2><div class="row"><select id="savedList"><option value="">— Load a saved estimate —</option></select>
+<button id="loadBtn">Load</button><button id="saveBtn" class="pri">Save</button><button id="newBtn">New</button><button id="delBtn" class="ghost">Delete</button></div><small class="muted">Saved only in this browser. Nothing is sent anywhere.</small></section>
+<section class="card"><h2>Your business</h2><div class="grid">
+<label>Business name<input data-f="bizName" placeholder="Smith Remodeling LLC"></label>
+<label>Phone<input data-f="bizPhone"></label><label>Email<input data-f="bizEmail"></label>
+<label class="span2">Address / License #<input data-f="bizAddr"></label>
+<label>Logo (optional)<input type="file" id="logoFile" accept="image/*"></label><div id="logoPrev"></div></div></section>
+<section class="card"><h2>Customer &amp; job</h2><div class="grid">
+<label>Customer name<input data-f="custName"></label><label>Customer phone / email<input data-f="custContact"></label>
+<label class="span2">Job address<input data-f="jobAddr"></label><label class="span2">Job description<textarea data-f="jobDesc" rows="2"></textarea></label>
+<label>Estimate #<input data-f="estNo"></label><label>Date<input type="date" data-f="estDate"></label><label>Valid until<input type="date" data-f="validUntil"></label></div></section>
+<section class="card"><h2>Labor</h2><div id="labor" class="items"></div><button data-add="labor">+ Add labor</button></section>
+<section class="card"><h2>Materials</h2><div id="materials" class="items"></div><button data-add="materials">+ Add material</button></section>
+<section class="card"><h2>Equipment &amp; other</h2><div id="other" class="items"></div><button data-add="other">+ Add item</button></section>
+<section class="card"><h2>Overhead, profit &amp; tax</h2><div class="grid">
+<label>Overhead %<input type="number" step="any" data-f="overheadPct"></label>
+<label>Profit %<input type="number" step="any" data-f="profitPct"></label>
+<div class="seg"><span>Profit method</span><label><input type="radio" name="mode" value="markup" data-f="mode">Markup</label><label><input type="radio" name="mode" value="margin" data-f="mode">Margin</label></div>
+<label>Sales tax %<input type="number" step="any" data-f="taxPct"></label>
+<div class="seg"><span>Tax applies to</span><label><input type="radio" name="taxOn" value="materials" data-f="taxOn">Materials</label><label><input type="radio" name="taxOn" value="total" data-f="taxOn">Total</label></div>
+<label>Deposit %<input type="number" step="any" data-f="depositPct"></label>
+<label class="span2">Terms &amp; notes<textarea data-f="terms" rows="3"></textarea></label></div>
+<p class="muted" id="modeHelp"></p></section>
+</main>
+<aside class="totals no-print" id="totals"></aside>
+<div class="actions no-print wrap"><button class="pri big" onclick="window.print()">Print / Save as PDF</button></div>
+<article id="printDoc"></article>
+<footer class="no-print">More contractor forms at <a href="https://www.etsy.com/shop/JobSiteFormsCompany" rel="noopener" target="_blank">Jobsite Forms Company</a></footer>
+<script src="calc.js"></script><script src="app.js"></script></body></html>
